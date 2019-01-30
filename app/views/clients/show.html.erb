@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+
+  <div class="card border-primary mb-3">
+    <h2 class="card-header">Client:&nbsp;<strong><%= @client.name %></strong></h2>
+
+    <div class="card-body">
+    <p>
+      <strong>Date of Birth:</strong>
+      <%= @client.dateofbirth %>
+    </p>
+
+    <p>
+      <strong>National Registration Card:</strong>
+      <%= @client.nrc %>
+    </p>
+
+    <p>
+      <strong>MAN Number:</strong>
+      <%= @client.manno %>
+    </p>
+
+    <p>
+      <strong>Residential Address:</strong>
+      <%= @client.address %>
+    </p>
+
+    <p>
+      <strong>Phone Number:</strong>
+      <%= @client.phone %>
+    </p>
+
+    <p>
+      <strong>Email Address:</strong>
+      <%= @client.email %>
+    </p>
+
+    <p>
+      <strong>Employment Status:</strong>
+      <%= @client.employstatus %>
+    </p>
+
+    <p>
+      <strong>Employing Ministry / Agency:</strong>
+      <%= @client.employministry %>
+    </p>
+
+    <p>
+      <strong>Date of Employment:</strong>
+      <%= @client.dateofemploy %>
+    </p>
+
+    <p>
+      <strong>Expected Retirement Date:</strong>
+      <%= @client.expretirementdate %>
+    </p>
+
+    <p>
+      <strong>Gross Salary:</strong>
+      <%= number_to_currency(@client.grosssalary, :unit => "ZMK") %>
+    </p>
+
+    <p>
+      <strong>Next of Kin:</strong>
+      <%= @client.nok %>
+    </p>
+
+    <p>
+      <strong>Marital Status:</strong>
+      <%= @client.maritalstatus %>
+    </p>
+
+    <p class="card-text"><%= link_to 'Edit', edit_client_path(@client), class: "btn btn-info" %></p>
+    <a><%= link_to 'Back', clients_path, class: "btn btn-secondary" %></a>
+  </div>
+</div>
+
+</div>

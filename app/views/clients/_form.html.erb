@@ -1,0 +1,33 @@
+
+<%= simple_form_for(@client) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :dateofbirth, as: :date, start_year: Date.today.year,
+                              end_year: Date.today.year - 55,
+                              order: [:day, :month, :year], label: "Date of Birth" %>
+    <%= f.input :nrc, label: "National Registration Card" %>
+    <%= f.input :manno, label: "MAN Number" %>
+    <%= f.input :address, label: "Residential Address" %>
+    <%= f.input :phone, label: "Phone Number" %>
+    <%= f.input :email, label: "Email Address" %>
+    <h5>Employment Status</h5><%= f.select :employstatus, ['Employed','Self Employed','Retired','Not Employed'], class: "form-group" %><br /><br />
+    <%= f.input :employministry, label: "Employing Ministry / Agency" %>
+    <%= f.input :dateofemploy, as: :date, start_year: Date.today.year,
+                              end_year: Date.today.year - 55,
+                              order: [:day, :month, :year], label: "Date of Employment" %>
+    <%= f.input :expretirementdate, as: :date, start_year: Date.today.year + 55,
+                              end_year: Date.today.year - 5,
+                              order: [:day, :month, :year], label: "Expected Retirement Date" %>
+    <%= f.input :grosssalary, label: "Gross Salary" %>
+    <%= f.input :nok, label: "Next of Kin" %>
+    <h5>Marital Status:</h5><%= f.select :maritalstatus, ['Single','Married','Widowed','Divorced'], class: "form-group" %>
+    <br /><br />
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-success" %>
+  </div>
+<% end %>
