@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  purchaseno: 1
+  client: one
+  dateofpurchase: 2019-01-30
+  item: one
+  quantity: 1
+  purchasevalue: 1.5
+
+two:
+  purchaseno: 1
+  client: two
+  dateofpurchase: 2019-01-30
+  item: two
+  quantity: 1
+  purchasevalue: 1.5

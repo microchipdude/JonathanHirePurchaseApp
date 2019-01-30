@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  itemno: MyString
+  name: MyString
+  stockingdate: 2019-01-30
+  model: MyString
+  warrantexpdate: 2019-01-30
+  serialno: MyString
+
+two:
+  itemno: MyString
+  name: MyString
+  stockingdate: 2019-01-30
+  model: MyString
+  warrantexpdate: 2019-01-30
+  serialno: MyString

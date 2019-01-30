@@ -1,0 +1,22 @@
+
+<%= simple_form_for(@item) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :itemno, label: "Item Number" %>
+    <%= f.input :name, label: "Name" %>
+    <%= f.input :stockingdate, as: :date, start_year: Date.today.year,
+                              end_year: Date.today.year - 20,
+                              order: [:day, :month, :year], label: "Stocking Date" %>
+    <%= f.input :model, label: "Model Number" %>
+    <%= f.input :warrantexpdate, as: :date, start_year: Date.today.year,
+                              end_year: Date.today.year + 30,
+                              order: [:day, :month, :year], label: "Warranty Expiry Date" %>
+    <%= f.input :serialno, label: "Serial Number" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-success" %>
+  </div>
+<% end %>

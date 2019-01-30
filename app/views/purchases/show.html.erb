@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Purchaseno:</strong>
+  <%= @purchase.purchaseno %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @purchase.client.name %>
+</p>
+
+<p>
+  <strong>Dateofpurchase:</strong>
+  <%= @purchase.dateofpurchase %>
+</p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @purchase.item.name %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @purchase.quantity %>
+</p>
+
+<p>
+  <strong>Purchase Value:</strong>
+  <%= number_to_currency(@purchase.purchasevalue, :unit => "ZMK") %>
+</p>
+
+<%= link_to 'Edit', edit_purchase_path(@purchase) %> |
+<%= link_to 'Back', purchases_path %>

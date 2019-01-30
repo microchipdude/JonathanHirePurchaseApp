@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_30_134455) do
+ActiveRecord::Schema.define(version: 2019_01_30_152744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,4 +34,30 @@ ActiveRecord::Schema.define(version: 2019_01_30_134455) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "items", force: :cascade do |t|
+    t.string "itemno"
+    t.string "name"
+    t.date "stockingdate"
+    t.string "model"
+    t.date "warrantexpdate"
+    t.string "serialno"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.integer "purchaseno"
+    t.bigint "client_id"
+    t.date "dateofpurchase"
+    t.bigint "item_id"
+    t.integer "quantity"
+    t.float "purchasevalue"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_purchases_on_client_id"
+    t.index ["item_id"], name: "index_purchases_on_item_id"
+  end
+
+  add_foreign_key "purchases", "clients"
+  add_foreign_key "purchases", "items"
 end

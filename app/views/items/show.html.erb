@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+
+      <div class="card border-primary mb-3">
+  <h2 class="card-header">Item Number:&nbsp;<strong><%= @item.itemno %></strong></h2>
+  <div class="card-body">
+      <p>
+        <strong>Name:</strong>
+        <%= @item.name %>
+      </p>
+
+      <p>
+        <strong>Stocking Date:</strong>
+        <%= @item.stockingdate %>
+      </p>
+
+      <p>
+        <strong>Model:</strong>
+        <%= @item.model %>
+      </p>
+
+      <p>
+        <strong>Warrant Expiry Date:</strong>
+        <%= @item.warrantexpdate %>
+      </p>
+
+      <p>
+        <strong>Serial No:</strong>
+        <%= @item.serialno %>
+      </p>
+
+      <%= link_to 'Edit', edit_item_path(@item), class: "btn btn-info" %> |
+      <%= link_to 'Back', items_path, class: "btn btn-secondary" %>
+</div>
+</div>
+
+</div>
